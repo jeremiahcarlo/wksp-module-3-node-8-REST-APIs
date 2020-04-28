@@ -1,0 +1,125 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+.container {
+  width: 90%;
+  margin: 0 auto; }
+
+.btn {
+  background-color: #428BCA;
+  border: 1px solid #ddd;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  outline: none; }
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+  text-align: center; }
+  .game #menu {
+    text-align: center; }
+    .game #menu #game-title {
+      font-size: 10vw;
+      color: #000000;
+      padding-bottom: 10px;
+      margin: 0; }
+  .game #new-game {
+    visibility: hidden; }
+  .game #game-progress {
+    display: none; }
+  .game #gameboard {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    text-align: center;
+    display: none; }
+    .game #gameboard #word {
+      letter-spacing: 20px;
+      font-size: 3em; }
+    .game #gameboard .letters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; }
+      .game #gameboard .letters button {
+        background-color: #428BCA;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        margin: 10px; }
+      .game #gameboard .letters .flip {
+        animation: flip-horizontal-bottom 0.4s;
+        background-color: #9CC0E0; }
+
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0); }
+  100% {
+    transform: rotateX(-180deg); } }
+
+header {
+  background-color: #DB4352;
+  padding: 10px;
+  margin-bottom: 20px; }
+  header .nav {
+    color: #fff; }
+    header .nav a {
+      text-decoration: none;
+      color: #fff; }
+      header .nav a h1 {
+        margin: 0; }
+
+.form-input {
+  text-align: center;
+  display: flex;
+  justify-content: center; }
+  .form-input .form {
+    width: 80%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    .form-input .form input[type="text"],
+    .form-input .form button {
+      height: 30px;
+      font-size: 2em;
+      border: 1px solid gray;
+      margin: 10px 0px;
+      padding-left: 10px; }
+    .form-input .form button {
+      background-color: #000000;
+      color: #fff; }
+    .form-input .form #error-message {
+      display: none; }
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .users .user {
+    height: auto;
+    width: 300px;
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align: center; }
+    .users .user .avatar {
+      height: 70px;
+      border-radius: 360px; }
+    .users .user .more {
+      background-color: #000000;
+      color: #fff;
+      padding: 5px 10px 5px 10px;
+      border: none;
+      text-decoration: none; }
+      .users .user .more:hover {
+        background-color: gray; }
