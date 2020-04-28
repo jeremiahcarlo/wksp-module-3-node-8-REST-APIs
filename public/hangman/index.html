@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Hangman</title>
 </head>
+
 <body>
-    <div class="content">
-        time to get to hanging.... I mean guessing...
+  <section class="game">
+    <div class="container">
+      <div id="menu">
+        <h1 id="game-title">Hangman</h1>
+        <button class="btn" id="start-game" onclick="startGame()">Start game</button>
+      </div>
+      <div id="gameboard">
+        <h1 id="word"></h1>
+        <div class="letters">
+        </div>
+      </div>
+      <h1 id="game-progress"></h1>
+      <button class="btn" id="new-game" onclick="restartGame()">New game</button>
     </div>
-    <script src="scripts.js"></script>
+  </section>
+  <script src="scripts.js"></script>
 </body>
 
 </html>

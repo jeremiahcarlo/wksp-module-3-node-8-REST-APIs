@@ -1,59 +1,184 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap');
-@import 'reset';
-@import 'typography';
+$primary-color:#000000;
+$btn-color: #428BCA;
+$ligh-color: #F5F5F5;
 
 body {
-    background: #fafafa;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.main {
-    flex: 1 0 auto;
+// Global 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
 
-    &.four-oh-four {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: slategray;
+.btn {
+  background-color: $btn-color;
+  border: 1px solid #ddd;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  outline: none;
+}
 
-        .title {
-            font-size: 96px;
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+  text-align: center;
+
+  #menu {
+    text-align: center;
+
+    #game-title {
+      font-size: 10vw;
+      color: $primary-color;
+      padding-bottom: 10px;
+      margin: 0;
+    }
+  }
+
+  #new-game {
+    visibility: hidden;
+  }
+
+  #game-progress {
+    display: none;
+  }
+
+  #gameboard {
+    background-color: $ligh-color;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+
+    #word {
+      letter-spacing: 20px;
+      font-size: 3em;
+    }
+
+    .letters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      button {
+        background-color: $btn-color;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        margin: 10px;
+      }
+
+      .flip {
+        animation: flip-horizontal-bottom 0.4s;
+        background-color: #9CC0E0;
+      }
+
+      @keyframes flip-horizontal-bottom {
+        0% {
+          transform: rotateX(0);
         }
+
+        100% {
+          transform: rotateX(-180deg);
+        }
+      }
     }
+  }
 }
 
-.content {
+// Github
+header {
+  background-color: #DB4352;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  .nav {
+    color: #fff;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+
+      h1 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Form related
+.form-input {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  .form {
+    width: 80%;
+    font-size: 10px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin-top: 24px;
-}
 
-.box {
-    border: 1px solid #707070;
-    flex: 0 0 49%;
-    margin-bottom: 24px;
-    min-height: 200px;
-    padding: 18px;
-}
-
-.question {
-
-    .sample {
-        border: 1px solid #cacaca;
-        margin: 12px 32px 6px 0;
-        padding: 12px 14px;
+    input[type="text"],
+    button {
+      height: 30px;
+      font-size: 2em;
+      border: 1px solid gray;
+      margin: 10px 0px;
+      padding-left: 10px;
     }
+
+    button {
+      background-color: #000000;
+      color: #fff;
+    }
+
+    #error-message {
+      display: none;
+    }
+  }
 }
 
-@media screen and (min-width: 900px) {
-    
-    .content {
-        flex-direction: row;
-        justify-content: space-between;
-        min-height: 500px;
+// Users related
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .user {
+    height: auto;
+    width: 300px;
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align: center;
+
+    .avatar {
+      height: 70px;
+      border-radius: 360px;
     }
+
+    .more {
+      background-color: #000000;
+      color: #fff;
+      padding: 5px 10px 5px 10px;
+      border: none;
+      text-decoration: none;
+
+      &:hover {
+        background-color: gray;
+      }
+    }
+  }
 }
